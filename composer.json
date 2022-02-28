@@ -1,5 +1,5 @@
 {
-    "name": "cnj/seotamic",
+    "name": "insight-media/seotamic",
     "description": "Simple SEO addon for Statamic v3",
     "type": "statamic-addon",
     "license": "MIT",
@@ -21,10 +21,16 @@
             "Cnj\\Seotamic\\": "src"
         }
     },
-    "authors": [{
-        "name": "Martin Koterle",
-        "email": "martin@cnj.si"
-    }],
+    "authors": [
+        {
+            "name": "Martin Koterle",
+            "email": "martin@cnj.si"
+        },
+        {
+            "name": "Dries Dekeersgieter",
+            "email": "dries@insight-media.be"
+        }
+    ],
     "extra": {
         "statamic": {
             "name": "Seotamic",
