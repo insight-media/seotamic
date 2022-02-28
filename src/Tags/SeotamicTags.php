@@ -51,19 +51,21 @@ class SeotamicTags extends Tags
             $title = $this->context->value('seotamic_custom_title');
         }
 
+        $ts = config('seotamic.title_separator') ?? '';
+
         if (array_key_exists('title_append', $this->values)) {
             if ($this->context->raw('seotamic_title_append') && $this->values['title_append']) {
-                $title .= " {$this->values['title_append']}";
+                $title .= " {$ts} {$this->values['title_append']}";
             }
         }
 
         if (array_key_exists('title_prepend', $this->values)) {
             if ($this->context->raw('seotamic_title_prepend') && $this->values['title_prepend']) {
-                $title = "{$this->values['title_prepend']} {$title}";
+                $title = "{$this->values['title_prepend']} {$ts} {$title}";
             }
         }
 
-        return $title;
+        return trim($title);
     }
 
     /**
@@ -242,4 +244,5 @@ class SeotamicTags extends Tags
 
         return url($asset->manipulate(['w' => 1200, 'q' => '70']));
     }
+
 }

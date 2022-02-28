@@ -9,4 +9,7 @@ return [
 
     // blueprints we dont add fields to
     'ignore_blueprints' => [],
+
+    // title separator
+    'title_separator' => env('TITLE_SEPARATOR', null)
 ];
