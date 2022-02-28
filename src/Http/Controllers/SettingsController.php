@@ -118,23 +118,23 @@ class SettingsController extends CpController
                         'type' => 'assets',
                         'container' => config('seotamic.container'),
                         'max_files' => 1,
-                        'display' => 'Image',
-                        'instructions' => 'Use your logo or any other branded image for the rest of your pages. Use images with a 1.91:1 ratio and minimum recommended dimensions of 1200x630 for optimal clarity across all devices. The image will be resized to 1200 width.',
+                        'display' => __('seotamic::general.social_image'),
+                        'instructions' => __('seotamic::general.social_image_instructions'),
                     ],
                     'section_og' => [
                         'type' => 'section',
-                        'display' => 'Open Graph',
-                        'instructions' => 'Open Graph meta tags are snippets of code that control how URLs are displayed when shared on social media.'
+                        'display' => __('seotamic::general.social_og'),
+                        'instructions' => __('seotamic::general.social_og_instructions')
                     ],
                     'open_graph_display' => [
                         'type' => 'toggle',
-                        'display' => 'Display Open Graph tags',
+                        'display' => __('seotamic::general.social_og_display'),
                         'default' => true,
                     ],
                     'open_graph_site_name' => [
                         'type' => 'text',
                         'character_limit' => '50',
-                        'display' => 'Site name',
+                        'display' => __('seotamic::general.social_site_name'),
                         'show_when' => [
                             'open_graph_display' => true
                         ]
@@ -142,20 +142,20 @@ class SettingsController extends CpController
                     'open_graph_title' => [
                         'type' => 'text',
                         'character_limit' => '100',
-                        'display' => 'Title',
+                        'display' => __('seotamic::general.title'),
                         'show_when' => [
                             'open_graph_display' => true
                         ],
-                        'instructions' => 'Keep it short to prevent overflow. 40 characters for mobile and 60 for desktop is roughly the sweet spot. Use the raw title. Don’t include branding (e.g., your site name).',
+                        'instructions' => __('seotamic::general.social_og_title_instructions'),
                     ],
                     'open_graph_description' => [
                         'type' => 'textarea',
                         'character_limit' => '200',
-                        'display' => 'Description',
+                        'display' => __('seotamic::general.description_section'),
                         'show_when' => [
                             'open_graph_display' => true
                         ],
-                        'instructions' => 'General Description, can be overridden on specific pages. Complement the title to make the snippet as appealing and click-worthy as possible. Copy your meta description here if it makes sense. Keep it short and sweet. Facebook recommends 2–4 sentences, but that often truncates.',
+                        'instructions' => __('seotamic::general.social_og_description_instructions'),
                     ],
                     'section_twitter' => [
                         'type' => 'section',
@@ -163,13 +163,13 @@ class SettingsController extends CpController
                     ],
                     'twitter_display' => [
                         'type' => 'toggle',
-                        'display' => 'Display Twitter tags',
+                        'display' => __('seotamic::general.social_twitter_display'),
                         'default' => false,
                     ],
                     'twitter_title' => [
                         'type' => 'text',
                         'character_limit' => '100',
-                        'display' => 'Title',
+                        'display' => __('seotamic::general.title'),
                         'instructions' => '',
                         'show_when' => [
                             'twitter_display' => true
@@ -178,7 +178,7 @@ class SettingsController extends CpController
                     'twitter_description' => [
                         'type' => 'textarea',
                         'character_limit' => '200',
-                        'display' => 'Description',
+                        'display' => __('seotamic::general.description_section'),
                         'instructions' => '',
                         'show_when' => [
                             'twitter_display' => true

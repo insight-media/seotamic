@@ -25,7 +25,7 @@ class ServiceProvider extends AddonServiceProvider
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'seotamic');
 
         Nav::extend(function ($nav) {
-            $nav->content('SEOtamic')
+            $nav->content(__('seotamic::general.seotamic_title'))
                 ->section('Tools')
                 ->route('cnj.seotamic.index')
                 ->icon('seo-search-graph');

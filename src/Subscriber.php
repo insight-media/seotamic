@@ -69,8 +69,8 @@ class Subscriber
                 'handle' => 'seotamic_title',
                 'field' =>  [
                     'options' => [
-                        'title' => 'Title',
-                        'custom' => 'Custom'
+                        'title' => __('seotamic::blueprint.title'),
+                        'custom' => __('seotamic::blueprint.custom')
                     ],
                     'clearable' => false,
                     'multiple' => false,
@@ -82,8 +82,8 @@ class Subscriber
                     'localizable' => false,
                     'listable' => 'hidden',
                     'default' => 'title',
-                    'display' => 'Title',
-                    'instructions' => 'It can be used to determine the title used on search engine results pages.'
+                    'display' => __('seotamic::blueprint.title'),
+                    'instructions' => __('seotamic::blueprint.title_instructions')
                 ]
             ],
             [
@@ -94,7 +94,7 @@ class Subscriber
                     'type' => 'text',
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Custom Meta Title',
+                    'display' => __('seotamic::blueprint.custom_title'),
                     'if' => [
                         'seotamic_title'=> 'equals custom'
                     ]
@@ -104,12 +104,12 @@ class Subscriber
                 'handle' => 'seotamic_title_prepend',
                 'field' =>  [
                     'type' => 'toggle',
-                    'instructions' => 'Prepends to title the text set in General SEO settings',
+                    'instructions' => __('seotamic::blueprint.title_prepend_instructions'),
                     'localizable' => false,
                     'default' => true,
                     'width' => 50,
                     'listable' => 'hidden',
-                    'display' => 'Title prepend',
+                    'display' => __('seotamic::blueprint.title_prepend'),
                 ]
             ],
             [
@@ -117,20 +117,20 @@ class Subscriber
                 'field' =>  [
                     'type' => 'toggle',
                     'localizable' => false,
-                    'instructions' => 'Appends to title the text set in General SEO settings',
+                    'instructions' => __('seotamic::blueprint.title_append_instructions'),
                     'width' => 50,
                     'listable' => 'hidden',
                     'default' => true,
-                    'display' => 'Title append',
+                    'display' => __('seotamic::blueprint.title_append'),
                 ]
             ],
             [
                 'handle' => 'seotamic_meta_description',
                 'field' =>  [
                     'options' => [
-                        'empty' => 'Empty',
-                        'general' => 'General',
-                        'custom' => 'Custom',
+                        'empty' => __('seotamic::blueprint.empty'),
+                        'general' => __('seotamic::blueprint.general'),
+                        'custom' => __('seotamic::blueprint.custom'),
                     ],
                     'clearable' => false,
                     'default' => 'empty',
@@ -140,10 +140,10 @@ class Subscriber
                     'push_tags' => false,
                     'cast_booleans' => false,
                     'type' => 'select',
-                    'instructions' => 'It can be used to determine the text used under the title on search engine results pages. If empty, search engines will automatically generate this text.',
+                    'instructions' => __('seotamic::blueprint.description_instructions'),
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Meta description',
+                    'display' => __('seotamic::blueprint.description'),
                 ]
             ],
             [
@@ -154,7 +154,7 @@ class Subscriber
                     'type' => 'textarea',
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Custom Meta description',
+                    'display' => __('seotamic::blueprint.custom_description'),
                     'if' => [
                         'seotamic_meta_description' => 'equals custom'
                     ]
@@ -164,10 +164,10 @@ class Subscriber
                 'handle' => 'seotamic_canonical',
                 'field' =>  [
                     'type' => 'link',
-                    'instructions' => 'By default it will be set to the page url',
+                    'instructions' => __('seotamic::blueprint.canonical_instructions'),
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Canonical',
+                    'display' => __('seotamic::blueprint.canonical'),
                 ]
             ],
             [
@@ -176,16 +176,16 @@ class Subscriber
                     'type' => 'section',
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Social',
+                    'display' => __('seotamic::blueprint.social'),
                 ]
             ],
             [
                 'handle' => 'seotamic_open_graph_title',
                 'field' =>  [
                     'options' => [
-                        'title' => 'Title',
-                        'general' => 'General',
-                        'custom' => 'Custom',
+                        'title' => __('seotamic::blueprint.title'),
+                        'general' => __('seotamic::blueprint.general'),
+                        'custom' => __('seotamic::blueprint.custom'),
                     ],
                     'clearable' => false,
                     'default' => 'title',
@@ -197,7 +197,7 @@ class Subscriber
                     'type' => 'select',
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Open Graph title',
+                    'display' => __('seotamic::blueprint.og_title'),
                 ]
             ],
             [
@@ -208,7 +208,7 @@ class Subscriber
                     'type' => 'text',
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Custom Open Graph title',
+                    'display' => __('seotamic::blueprint.custom_og_title'),
                     'if' => [
                         'seotamic_open_graph_title' => 'equals custom'
                     ]
@@ -218,9 +218,9 @@ class Subscriber
                 'handle' => 'seotamic_open_graph_description',
                 'field' =>  [
                     'options' => [
-                        'meta' => 'Meta description',
-                        'general' => 'General description',
-                        'custom' => 'Custom',
+                        'meta' => __('seotamic::blueprint.description'),
+                        'general' => __('seotamic::blueprint.general_description'),
+                        'custom' => __('seotamic::blueprint.custom'),
                     ],
                     'clearable' => false,
                     'default' => 'general',
@@ -232,7 +232,7 @@ class Subscriber
                     'type' => 'select',
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Open Graph description',
+                    'display' => __('seotamic::blueprint.og_description'),
                 ]
             ],
             [
@@ -243,7 +243,7 @@ class Subscriber
                     'type' => 'textarea',
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Custom Open Graph description',
+                    'display' => __('seotamic::blueprint.custom_og_description'),
                     'if' => [
                         'seotamic_open_graph_description' => 'equals custom'
                     ]
@@ -253,9 +253,9 @@ class Subscriber
                 'handle' => 'seotamic_twitter_title',
                 'field' =>  [
                     'options' => [
-                        'title' => 'Title',
-                        'general' => 'General',
-                        'custom' => 'Custom',
+                        'title' => __('seotamic::blueprint.title'),
+                        'general' => __('seotamic::blueprint.general'),
+                        'custom' => __('seotamic::blueprint.custom'),
                     ],
                     'clearable' => false,
                     'default' => 'title',
@@ -267,7 +267,7 @@ class Subscriber
                     'type' => 'select',
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Twitter title',
+                    'display' => __('seotamic::blueprint.twitter_title'),
                 ]
             ],
             [
@@ -278,7 +278,7 @@ class Subscriber
                     'type' => 'text',
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Custom Twitter title',
+                    'display' => __('seotamic::blueprint.custom_twitter_title'),
                     'if' => [
                         'seotamic_twitter_title' => 'equals custom'
                     ]
@@ -288,9 +288,9 @@ class Subscriber
                 'handle' => 'seotamic_twitter_description',
                 'field' =>  [
                     'options' => [
-                        'meta' => 'Meta description',
-                        'general' => 'General description',
-                        'custom' => 'Custom',
+                        'meta' => __('seotamic::blueprint.description'),
+                        'general' => __('seotamic::blueprint.general_description'),
+                        'custom' => __('seotamic::blueprint.custom'),
                     ],
                     'clearable' => false,
                     'default' => 'general',
@@ -302,7 +302,7 @@ class Subscriber
                     'type' => 'select',
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Twitter description',
+                    'display' => __('seotamic::blueprint.twitter_description'),
                 ]
             ],
             [
@@ -313,7 +313,7 @@ class Subscriber
                     'type' => 'textarea',
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Custom Twitter description',
+                    'display' => __('seotamic::blueprint.custom_twitter_description'),
                     'if' => [
                         'seotamic_twitter_description' => 'equals custom'
                     ]
@@ -328,10 +328,10 @@ class Subscriber
                     'allow_uploads' => true,
                     'max_files' => 1,
                     'type' => 'assets',
-                    'instructions' => 'If not set, the general image will be used. It\'s best to use an image with a 1.91:1 aspect ratio that is at least 1200px wide for universal support. The image will be resized to 1200 width.',
+                    'instructions' => __('seotamic::blueprint.image_instructions'),
                     'localizable' => false,
                     'listable' => 'hidden',
-                    'display' => 'Image',
+                    'display' => __('seotamic::blueprint.image'),
                 ]
             ]
         ];
